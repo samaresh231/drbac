@@ -6,43 +6,43 @@ const setUser = require('./setuser')
 app.use(express.json())
 app.use(setUser)
 
-app.get('/apple', authorisation('a'), (req, res) => {
+app.get('/apple', roleAuth('role1', 'a'), (req, res) => {
     res.json({
         msg: "apple"
     })
 })
 
-app.get('/ball', authorisation('b'), (req, res) => {
+app.get('/ball', roleAuth('role1', 'b'), (req, res) => {
     res.json({
         msg: "ball"
     })
 })
 
-app.get('/cat', authorisation('c'), (req, res) => {
+app.get('/cat', roleAuth('role1', 'c'), (req, res) => {
     res.json({
         msg: "cat"
     })
 })
 
-app.get('/dog', authorisation('d'), (req, res) => {
+app.get('/dog', roleAuth('role2', 'd'), (req, res) => {
     res.json({
         msg: "dog"
     })
 })
 
-app.get('/eagle', authorisation('e'), (req, res) => {
+app.get('/eagle', roleAuth('role3', 'e'), (req, res) => {
     res.json({
         msg: "eagle"
     })
 })
 
-app.get('/fall', authorisation('f'), (req, res) => {
+app.get('/fall', roleAuth('role3', 'f'), (req, res) => {
     res.json({
         msg: "fall"
     })
 })
 
-app.get('/goat', authorisation('g'), (req, res) => {
+app.get('/goat', roleAuth('role3', 'g'), (req, res) => {
     res.json({
         msg: "goat"
     })
