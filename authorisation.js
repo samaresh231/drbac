@@ -1,6 +1,6 @@
-function authorisation(role) {
+function authorisation(permission) {
     return (req, res, next) => {
-        if(!req.user.roles.includes(role)) {
+        if(!req.user.permissions.includes(permission)) {
             return res.json({
                 msg: "Access Denied"
             })
