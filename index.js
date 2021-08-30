@@ -30,6 +30,24 @@ app.get('/dog', authorisation('d'), (req, res) => {
     })
 })
 
+app.get('/eagle', authorisation('e'), (req, res) => {
+    res.json({
+        msg: "eagle"
+    })
+})
+
+app.get('/fall', authorisation('f'), (req, res) => {
+    res.json({
+        msg: "fall"
+    })
+})
+
+app.get('/goat', authorisation('g'), (req, res) => {
+    res.json({
+        msg: "goat"
+    })
+})
+
 
 app.listen(3000, () => {
     console.log('listening on port 3000')
